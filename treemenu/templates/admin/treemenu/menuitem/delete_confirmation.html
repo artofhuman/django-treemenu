@@ -1,0 +1,24 @@
+{% extends "admin/delete_confirmation.html" %}
+{% load i18n %}
+
+{% comment %}
+We have to override this or the path to jsi18n will be wrong.
+Note the "super.super", as the direct parent has the wrong url.
+{% endcomment %}
+{% block extrahead %}{{ block.super.super }}
+<script type="text/javascript" src="../../../../../../../jsi18n/"></script>
+{{ media }}
+{% endblock %}
+
+{% block breadcrumbs %}
+
+    <ul>
+        <li><a href="../../../../../../">{% trans "Home" %}</a></li>
+        <li><a href="../../../../">{% trans "Menus" %}</a></li>
+        <li><a href="../../../">{{ menu.name }}</a></li>
+        <li>{% trans 'Items' %}</li>
+        <li><a href="../">{{ object|escape|truncatewords:"18" }}</a></li>
+        <li>{% trans 'Delete' %}</li>
+    </ul>
+
+{% endblock %}

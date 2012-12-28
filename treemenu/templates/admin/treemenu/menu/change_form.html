@@ -1,0 +1,60 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+
+
+{% block after_related_objects %}
+{% if change %}
+
+<link rel="stylesheet" type="text/css" href="/static/feincms/fein_tree.css">
+<link rel="stylesheet" type="text/css" href="/static/feincms/style.css">
+<script type="text/javascript" src="/static/feincms/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/static/feincms/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript">
+    var feincms = {
+            "jQuery": jQuery
+            , "tree_structure": {{ tree_structure|default:"null" }}
+    };
+</script>
+<script type="text/javascript" src="/static/feincms/ie_compat.js"></script>
+<script type="text/javascript" src="/static/feincms/jquery.cookie.js"></script>
+<script type="text/javascript" src="/static/feincms/toolbox.js"></script>
+<script type="text/javascript" src="/static/feincms/fein_tree.js"></script>
+<style type="text/css">#result_list { display: none }</style>
+
+    <fieldset class="grp-changelist-results grp-module">
+    <h2>Пункты меню</h2>
+    <div class="form-row" >
+        <table cellspacing="0" class="grp-sortable" id="result_list" style="display: table;">
+            <tbody>
+                {% for menu_item in original.menu_items.all %}
+                    <tr class="grp-row grp-row-even row1" id="item-{{ menu_item.id }}" rel="{{ menu_item.id }}" tabindex="0">
+                        <th>
+                            <a href="items/{{ menu_item.pk }}/">
+                                <span style="width: 14px;" class="page_marker" id="page_marker-{{ menu_item.id }}">&nbsp;</span>&nbsp;
+                                {{ menu_item.title_with_spacer|safe }}
+                            </a>
+                        </th>
+                        <td>{{ menu_item.url }}</td>
+                        <td>
+                            {% if menu_item.active %}
+                                <img alt="True" src="/static/admin/img/icon-yes.gif" />
+                            {% else %}
+                                <img alt="False" src="/static/admin/img/icon-no.gif" />
+                            {% endif %}
+                        </td>
+                        <td><div class="drag_handle"></div></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </fieldset>
+{% endif %}
+{% endblock %}
+
+{% block object-tools-items %}
+    <li>
+      <a href="items/add/">Добавить пункт меню</a>
+    </li>
+    {{ block.super }}
+{% endblock %}
