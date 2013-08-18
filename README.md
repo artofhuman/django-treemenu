@@ -18,5 +18,24 @@ Add treemenu in settings.py
 
 Create menu and in your template
 
+## Examples
+
+Simple menu without childrens
+
+~~~~~ python
+{% load treemenu_tags %}
+{% menu you_menu_slug %}
+<div class="b-menu-vert b-menu-vert_type_header">
+    <ul class="b-menu-vert__layout">
+        {% for item in menuitems %}
+        <li class="b-menu-vert__layout-unit {% if forloop.first %}b-menu-vert__layout-unit_position_first{% endif %} {% if forloop.last %}b-menu-vert__layout-unit_position_last{% endif %}">
+            <div class="b-menu-vert__item">
+                <a class="b-link b-menu-vert__root {% if item.current %}b-big{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+~~~~~
 
 
