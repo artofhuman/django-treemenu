@@ -9,13 +9,13 @@ Another reusable app for organize tree menus on django site
 ##Usage
 
 Add treemenu in settings.py
-
+```python
     INSTALLED_APPS = (
         # ...
         treemenu,
         # ...
     )
-
+```
 Create menu and in your template
 
 ## Examples
