@@ -22,7 +22,7 @@ Create menu and in your template
 
 Simple menu without childrens
 
-~~~~~ python
+```html
 {% load treemenu_tags %}
 {% menu you_menu_slug %}
 <div class="b-menu-vert b-menu-vert_type_header">
@@ -36,6 +36,6 @@ Simple menu without childrens
         {% endfor %}
     </ul>
 </div>
-~~~~~
+```
 
 
