@@ -1,25 +1,22 @@
-django-treemenu
-===============
+#django-treemenu
 
 Another reusable app for organize tree menus on django site
 
-Install
-===============
+##Install
 
-  pip install git+git+git://github.com/artofhuman/django-treemenu
+    pip install git+git+git://github.com/artofhuman/django-treemenu
 
-Usage
-==============
+##Usage
 
-  Add treemenu in settings.py
+Add treemenu in settings.py
 
-  INSTALLED_APPS = (
-      # ...
-      treemenu,
-      # ...
-  )
+    INSTALLED_APPS = (
+        # ...
+        treemenu,
+        # ...
+    )
 
-  Create menu and in your template
+Create menu and in your template
 
 
 
