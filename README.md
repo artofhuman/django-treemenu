@@ -2,6 +2,8 @@
 
 Another reusable app for organize tree menus on django site
 
+![Alt text](https://raw.github.com/artofhuman/django-treemenu/master/assets/screen.jpg)
+
 ##Install from pypi
 
     pip install django-treemenu
