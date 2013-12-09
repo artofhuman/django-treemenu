@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
 #author: Semen Pupkov (semen.pupkov@gmail.com)
 
+from django import forms
 from django.contrib import admin
-from .models import Menu, MenuItem
-from django.conf.urls.defaults import patterns
 from django.http import Http404, HttpResponseRedirect
 from django.contrib.admin.util import unquote
-from django import forms
-from feincms.admin import editor
 
+from feincms.admin import editor
+from .models import Menu, MenuItem
+
+try:
+    from django.conf.urls.defaults import patterns
+except ImportError:
+    from django.conf.urls import patterns
 
 class MenuItemAdminForm(forms.ModelForm):
     class Meta:
