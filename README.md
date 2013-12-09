@@ -9,20 +9,20 @@ Another reusable app for organize tree menus on django site
 ##Usage
 
 Add treemenu in settings.py
-
+```python
     INSTALLED_APPS = (
         # ...
         treemenu,
         # ...
     )
-
+```
 Create menu and in your template
 
 ## Examples
 
 Simple menu without childrens
 
-~~~~~ python
+```html
 {% load treemenu_tags %}
 {% menu you_menu_slug %}
 <div class="b-menu-vert b-menu-vert_type_header">
@@ -36,6 +36,6 @@ Simple menu without childrens
         {% endfor %}
     </ul>
 </div>
-~~~~~
+```
 
 
