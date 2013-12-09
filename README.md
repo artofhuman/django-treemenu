@@ -2,9 +2,15 @@
 
 Another reusable app for organize tree menus on django site
 
-##Install
+##Install from pypi
+
+    pip install django-treemenu
+
+##Install from git
 
     pip install git+git+git://github.com/artofhuman/django-treemenu
+
+Then run python manage syncdb or if your use south run python manage migrate
 
 ##Usage
 
