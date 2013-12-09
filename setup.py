@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(name='django-treemenu',
-    version='0.1.1',
+    version='0.1',
     description='Another reusable app for organize tree menus on django site',
     author='Pupkov Semen',
     author_email='semen.pupvko@gmail.com',
