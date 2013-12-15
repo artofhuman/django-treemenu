@@ -3,6 +3,8 @@
 Another reusable app for organize tree menus on django site
 This app need grapelli admin theme
 
+![Alt text](https://raw.github.com/artofhuman/django-treemenu/master/assets/screen.jpg)
+
 ##Install from pip
 
     pip install django-treemenu
