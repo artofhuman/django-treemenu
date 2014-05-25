@@ -13,7 +13,7 @@ def build_menu(parser, token):
     try:
         tag_name, menu_name = token.split_contents()
     except:
-        raise template.TemplateSyntaxError, "%r tag requires exactly one argument" % token.contents.split()[0]
+        raise template.TemplateSyntaxError("%r tag requires exactly one argument" % token.contents.split()[0])
     return MenuObject(menu_name)
 
 
@@ -30,7 +30,6 @@ class MenuObject(template.Node):
 def get_items(menu_name, current_path):
 
     cache_time = getattr(settings, 'TREEMENU_CACHE_TIME', 3600)
-    # debug = getattr(settings, 'DEBUG', False)
 
     menuitems = []
     if cache_time >= 0:
