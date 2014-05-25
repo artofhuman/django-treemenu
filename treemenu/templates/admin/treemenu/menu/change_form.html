@@ -1,24 +1,21 @@
 {% extends "admin/change_form.html" %}
-{% load i18n %}
-
+{% load i18n staticfiles %}
 
 {% block after_related_objects %}
 {% if change %}
 
-<link rel="stylesheet" type="text/css" href="/static/feincms/fein_tree.css">
-<link rel="stylesheet" type="text/css" href="/static/feincms/style.css">
-<script type="text/javascript" src="/static/feincms/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="/static/feincms/jquery-ui-1.8.22.custom.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static "feincms/tree_editor.css" %}">
+<script type="text/javascript" src="{% static "feincms/jquery-1.9.1.min.js" %}"></script>
+<script type="text/javascript" src="{% static "feincms/jquery-ui-1.10.3.custom.min.js" %}"></script>
 <script type="text/javascript">
     var feincms = {
             "jQuery": jQuery
             , "tree_structure": {{ tree_structure|default:"null" }}
     };
 </script>
-<script type="text/javascript" src="/static/feincms/ie_compat.js"></script>
-<script type="text/javascript" src="/static/feincms/jquery.cookie.js"></script>
-<script type="text/javascript" src="/static/feincms/toolbox.js"></script>
-<script type="text/javascript" src="/static/feincms/fein_tree.js"></script>
+<script type="text/javascript" src="{% static "feincms/ie_compat.js" %}"></script>
+<script type="text/javascript" src="{% static "feincms/jquery.cookie.js" %}"></script>
+<script type="text/javascript" src="{% static "feincms/tree_editor.js" %} "></script>
 <style type="text/css">#result_list { display: none }</style>
 
     <fieldset class="grp-changelist-results grp-module">
