@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-#author: Semen Pupkov (semen.pupkov@gmail.com)
 
 from django import forms
 from django.contrib import admin
 from django.http import Http404, HttpResponseRedirect
 from django.contrib.admin.util import unquote
 
-from feincms.admin import editor
+from feincms.admin import tree_editor
 from .models import Menu, MenuItem
 
 try:
@@ -14,13 +13,14 @@ try:
 except ImportError:
     from django.conf.urls import patterns
 
+
 class MenuItemAdminForm(forms.ModelForm):
     class Meta:
         model = MenuItem
         exclude = ('menu', )
 
 
-class MenuItemAdmin(editor.TreeEditor):
+class MenuItemAdmin(tree_editor.TreeEditor):
     '''
     This class is used as a proxy by MenuAdmin to manipulate menu items.
     It should never be registered.

@@ -11,7 +11,7 @@ setup(name='django-treemenu',
     zip_safe=False,
     install_requires=[
         'django-mptt>=0.6.0',
-        'feincms==1.7.7'
+        'feincms==1.9.3'
     ],
     packages=find_packages(),
     classifiers=[

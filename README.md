@@ -21,6 +21,7 @@ Add treemenu in settings.py
 ```python
     INSTALLED_APPS = (
         # ...
+        feincms, # need for tree editor
         treemenu,
         # ...
     )
