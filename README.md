@@ -1,4 +1,5 @@
 #django-treemenu
+[![PyPi downloads](https://pypip.in/d/django-treemenu/badge.png)](https://crate.io/packages/django-treemenu)
 
 Another reusable app for organize tree menus on django site
 This app need grapelli admin theme
